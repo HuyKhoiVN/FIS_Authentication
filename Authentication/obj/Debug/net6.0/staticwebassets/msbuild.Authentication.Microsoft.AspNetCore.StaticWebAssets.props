@@ -12864,8 +12864,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>77ofjck324</Fingerprint>
-      <Integrity>Q8uLDOR5dQdDEbZg9aTs7x4W1MWiZvfg+p5KwbAkbG0=</Integrity>
+      <Fingerprint>omsrrlj8g4</Fingerprint>
+      <Integrity>UJc4Sms4CnHXC0Q7BDKl2Q3Xc0v5Wgy4xS8hqGDVSi4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\pages\_login.js'))</OriginalItemSpec>

@@ -8568,17 +8568,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"kqk5tushn4"},{"Name":"integrity","Value":"sha256-PG2pgE8W8hR8YELEnXwp432HNYMjUXo5nJjZS7Epci8="},{"Name":"label","Value":"_content/Authentication/assets/js/pages/_layout.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"17603"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022PG2pgE8W8hR8YELEnXwp432HNYMjUXo5nJjZS7Epci8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Sep 2024 02:57:08 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Authentication/assets/js/pages/_login.77ofjck324.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\pages\_login.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"77ofjck324"},{"Name":"integrity","Value":"sha256-Q8uLDOR5dQdDEbZg9aTs7x4W1MWiZvfg\u002Bp5KwbAkbG0="},{"Name":"label","Value":"_content/Authentication/assets/js/pages/_login.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5507"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Q8uLDOR5dQdDEbZg9aTs7x4W1MWiZvfg\u002Bp5KwbAkbG0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 14:40:11 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Authentication/assets/js/pages/_login.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\pages\_login.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Q8uLDOR5dQdDEbZg9aTs7x4W1MWiZvfg\u002Bp5KwbAkbG0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5507"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Q8uLDOR5dQdDEbZg9aTs7x4W1MWiZvfg\u002Bp5KwbAkbG0=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Dec 2024 14:40:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-UJc4Sms4CnHXC0Q7BDKl2Q3Xc0v5Wgy4xS8hqGDVSi4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6094"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UJc4Sms4CnHXC0Q7BDKl2Q3Xc0v5Wgy4xS8hqGDVSi4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 04:12:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Authentication/assets/js/pages/_login.omsrrlj8g4.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\pages\_login.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"omsrrlj8g4"},{"Name":"integrity","Value":"sha256-UJc4Sms4CnHXC0Q7BDKl2Q3Xc0v5Wgy4xS8hqGDVSi4="},{"Name":"label","Value":"_content/Authentication/assets/js/pages/_login.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6094"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UJc4Sms4CnHXC0Q7BDKl2Q3Xc0v5Wgy4xS8hqGDVSi4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 23 Dec 2024 04:12:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Authentication/assets/js/rater.min.j1r481aiq9.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\rater.min.js'))</AssetFile>

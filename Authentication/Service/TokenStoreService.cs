@@ -2,25 +2,27 @@
 
 namespace Authentication.Service
 {
-    public class TokenService
+    public class TokenStoreService
     {
         private readonly IMemoryCache _memoryCache;
 
-        public TokenService(IMemoryCache memoryCache)
+        public TokenStoreService(IMemoryCache memoryCache)
         {
             _memoryCache = memoryCache;
         }
 
-        public void SaveToken(string token)
+        public void StoreToken(string token)
         {
-            // Lưu token vào MemoryCache với thời gian hết hạn (ví dụ: 30 phút)
-            _memoryCache.Set(token, true, TimeSpan.FromMinutes(30));
+            var cacheKey = $"Token_";
+            _memoryCache.Set(cacheKey, token, TimeSpan.FromHours(1)); // Token hết hạn sau 1 giờ
         }
 
-        public bool ValidateToken(string token)
+        public string? GetToken()
         {
-            // Kiểm tra token có trong MemoryCache hay không
-            return _memoryCache.TryGetValue(token, out _);
+            var cacheKey = $"Token_";
+            _memoryCache.TryGetValue(cacheKey, out string? token);
+            return token;
         }
     }
+
 }
