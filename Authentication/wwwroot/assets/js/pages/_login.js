@@ -57,6 +57,7 @@ async function signIn() {
                     document.cookie = `${accessKey}=${token}`;
 
                     localStorage.setItem("profile", profile);
+                    sendToken();
 
                     // Hiển thị thông báo thành công
                     Swal.fire("Đăng nhập thành công", "Chào mừng <b>" + data.username + "</b> trở lại.", "success").then(function () {
@@ -109,6 +110,24 @@ async function signIn() {
     }
 
 }
+function sendToken() {
+    $.ajax({
+        url: '/api/token/store', // API để lưu token vào trung gian
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            token: localStorage.getItem("token")   // Lấy token từ localStorage
+        }),
+        success: function () {
+            console.log("Token stored successfully on the server.");
+        },
+        error: function (xhr) {
+            console.error("Failed to store token:", xhr.responseText);
+        }
+    });
+
+}
+
 $("#btnLogin").on("click", function (e) {
     e.preventDefault();
     signIn();

@@ -19,12 +19,12 @@ namespace Authentication.Controllers
         [HttpPost("store")]
         public IActionResult StoreToken([FromBody] TokenRequest request)
         {
-            if (string.IsNullOrEmpty(request.UserId) || string.IsNullOrEmpty(request.Token))
+            if (string.IsNullOrEmpty(request.Token))
             {
                 return BadRequest("Invalid token or userId.");
             }
 
-            _tokenStore.StoreToken(request.UserId, request.Token);
+            _tokenStore.StoreToken(request.Token);
             return Ok();
         }
     }

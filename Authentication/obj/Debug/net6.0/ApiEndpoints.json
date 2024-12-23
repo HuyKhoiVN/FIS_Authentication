@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "Authentication.Controllers.TokenController",
+    "Method": "StoreToken",
+    "RelativePath": "api/token/store",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Authentication.Models.TokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

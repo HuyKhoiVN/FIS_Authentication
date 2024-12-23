@@ -277,3 +277,4 @@ D:\HuyKhoi\FIS\Net\Authentication\Authentication\obj\Debug\net6.0\refint\Authent
 D:\HuyKhoi\FIS\Net\Authentication\Authentication\obj\Debug\net6.0\Authentication.pdb
 D:\HuyKhoi\FIS\Net\Authentication\Authentication\obj\Debug\net6.0\Authentication.genruntimeconfig.cache
 D:\HuyKhoi\FIS\Net\Authentication\Authentication\obj\Debug\net6.0\ref\Authentication.dll
+D:\HuyKhoi\FIS\Net\Authentication\Authentication\obj\Debug\net6.0\Authentication.sourcelink.json

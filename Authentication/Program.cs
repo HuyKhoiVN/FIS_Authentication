@@ -1,11 +1,10 @@
+using Authentication.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container
-builder.Services.AddControllersWithViews();
 
 // Configure CORS
 builder.Services.AddCors(options =>
@@ -26,7 +25,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         {
             ValidateIssuer = true,
             ValidateAudience = true,
-            ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
@@ -34,6 +32,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ClockSkew = TimeSpan.Zero
         };
     });
+
+builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<TokenStoreService>();
+
+// Add services to the container
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -48,6 +52,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("AllowAll");
+
+app.UseMiddleware<TokenRetrievalMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 
