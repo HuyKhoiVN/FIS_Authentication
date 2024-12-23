@@ -1,0 +1,435 @@
+[
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Account, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/v1/Account",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Account, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Post",
+    "RelativePath": "api/v1/Account",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "appData.Models.Account",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Account, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Account/{entityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Account, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Put",
+    "RelativePath": "api/v1/Account/{entityId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "entity",
+        "Type": "appData.Models.Account",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Account, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Account/{entityId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.AccountController",
+    "Method": "GetEmployeesFullInfor",
+    "RelativePath": "api/v1/Account/getFullInfor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.AccountController",
+    "Method": "ListServerSide",
+    "RelativePath": "api/v1/Account/list-server-side",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parameters",
+        "Type": "appData.Utils.Enitties.EntityDTParameters",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Account, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetPaging",
+    "RelativePath": "api/v1/Account/paging",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/v1/Account/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "appData.Models.Account",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Account, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "SoftDelete",
+    "RelativePath": "api/v1/Account/softDelete/{entityId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/v1/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "appData.ModelsDTO.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.AuthController",
+    "Method": "LoginService",
+    "RelativePath": "api/v1/Auth/loginService",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "appData.ModelsDTO.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Department, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/v1/Department",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Department, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Post",
+    "RelativePath": "api/v1/Department",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "appData.Models.Department",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Department, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Department/{entityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Department, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Put",
+    "RelativePath": "api/v1/Department/{entityId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "entity",
+        "Type": "appData.Models.Department",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Department, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Department/{entityId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Department, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetPaging",
+    "RelativePath": "api/v1/Department/paging",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Department, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "SoftDelete",
+    "RelativePath": "api/v1/Department/softDelete/{entityId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Role, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/v1/Role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Role, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Post",
+    "RelativePath": "api/v1/Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "appData.Models.Role",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Role, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Role/{entityId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Role, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Put",
+    "RelativePath": "api/v1/Role/{entityId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "entity",
+        "Type": "appData.Models.Role",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Role, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Role/{entityId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Role, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetPaging",
+    "RelativePath": "api/v1/Role/paging",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "appAPI.Controllers.BaseController\u00601[[appData.Models.Role, appData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "SoftDelete",
+    "RelativePath": "api/v1/Role/softDelete/{entityId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "entityId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,14 @@
+D:\HuyKhoi\FIS\Net\Authentication\appData\bin\Debug\net6.0\appData.deps.json
+D:\HuyKhoi\FIS\Net\Authentication\appData\bin\Debug\net6.0\appData.dll
+D:\HuyKhoi\FIS\Net\Authentication\appData\bin\Debug\net6.0\appData.pdb
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.GeneratedMSBuildEditorConfig.editorconfig
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.AssemblyInfoInputs.cache
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.AssemblyInfo.cs
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.csproj.CoreCompileInputs.cache
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.dll
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\refint\appData.dll
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.pdb
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\ref\appData.dll
+D:\HuyKhoi\FIS\Net\Authentication\appData\bin\Debug\net6.0\appData.runtimeconfig.json
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.csproj.AssemblyReference.cache
+D:\HuyKhoi\FIS\Net\Authentication\appData\obj\Debug\net6.0\appData.genruntimeconfig.cache

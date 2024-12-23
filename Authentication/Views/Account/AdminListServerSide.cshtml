@@ -1,0 +1,397 @@
+﻿<style>
+    .tableEmployee {
+        width: 100%;
+    }
+
+    #tableData th:nth-child(1),
+    #tableData td:nth-child(1) {
+        width: 100px;
+        /* Cột ID */
+    }
+
+    #tableData th:nth-child(2),
+    #tableData td:nth-child(2) {
+        width: 150px;
+        /* Cột Account Code */
+    }
+
+    #tableData th:nth-child(3),
+    #tableData td:nth-child(3) {
+        width: 200px;
+        /* Cột Username */
+    }
+
+    #tableData th:nth-child(4),
+    #tableData td:nth-child(4) {
+        width: 250px;
+        /* Cột Full Name */
+    }
+
+    #tableData th:nth-child(5),
+    #tableData td:nth-child(5) {
+        width: 200px;
+        /* Cột Date of Birth */
+    }
+
+    #tableData th:nth-child(6),
+    #tableData td:nth-child(6) {
+        width: 150px;
+        /* Cột Phone Number */
+    }
+
+    #tableData th:nth-child(7),
+    #tableData td:nth-child(7) {
+        width: 100px;
+        /* Cột Role */
+    }
+
+    #tableData th:nth-child(8),
+    #tableData td:nth-child(8) {
+        width: 200px;
+        /* Cột Department */
+    }
+
+    /* Cột cuối "Actions" không cần set width cố định */
+    #tableData th:nth-child(9),
+    #tableData td:nth-child(9) {
+        width: auto;
+        /* Cột CreatedTime */
+    }
+
+</style>
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between mb-3">
+            <h3>Account Management</h3>
+            <button id="btnAddAccount" class="btn btn-primary">Add New</button>
+        </div>
+        <table id="tableData" class="table table-striped tableEmployee">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mã tài khoản</th>
+                    <th>Username</th>
+                    <th>Full Name</th>
+                    <!-- <th>Email</th> -->
+                    <th>Date of Birth</th>
+                    <th>Phone Number</th>
+                    <th>Role</th>
+                    <th>Department</th>
+                    <th>CreatedTime</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="accountModalLabel">Account Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="accountForm">
+                        <div class="row">
+                            <div class="col-sm-6 mb-3">
+                                <label for="accountCode" class="form-label">Account Code</label>
+                                <input type="text" id="accountCode" name="accountCode" class="form-control" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" id="username" name="username" class="form-control" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" class="form-control" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="dob" class="form-label">Date of Birth</label>
+                                <input type="date" id="dob" name="dob" class="form-control" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="roleId" class="form-label">Role</label>
+                                <select id="roleId" name="roleId" class="form-select" required></select>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="departmentId" class="form-label">Department</label>
+                                <select id="departmentId" name="departmentId" class="form-select" required></select>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" id="password" name="password" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success" id="btnSaveAccount">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@section Scripts {
+    <script>
+        const apiBaseUrl = 'https://localhost:7174/api/v1/'; // Replace with your API base URL
+        var table;
+        var roles = [];
+        var departments = [];
+
+        $(document).ready(function () {
+
+            $.ajaxSetup({
+                beforeSend: function (xhr) {
+                    const token = localStorage.getItem("token");
+                    if (token) {
+                        xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+                    } else {
+                        console.error("Token is missing in localStorage");
+                    }
+                },
+                error: function (xhr) {
+                    if (xhr.status === 401) {
+                        alert("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.");
+                        localStorage.removeItem("token");
+                        window.location.href = "/Account/Login";
+                    }
+                }
+            });
+
+
+
+                    initTable();
+
+            function initTable() {
+                table = $('#tableData').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    paging: true,
+                    searching: { regex: true },
+                    order: [1, 'desc'],
+                    ajax: {
+                        url: apiBaseUrl + "account/list-server-side",
+                        type: "POST",
+                        contentType: "application/json",
+                        dataType: "json",
+                        data: function (d) {
+                            d.searchAll = "";
+
+                            return JSON.stringify(d);
+                        }
+                    },
+                    columns: [
+                        {
+                            data: 'id',
+                            render: function (data, type, row, meta) {
+                                var info = table.page.info();
+                                var stt = meta.row + 1 + info.page * info.length;
+                                return stt; // This contains the row index
+                            }
+                        },
+
+                        {
+                            data: 'accountCode',
+                            render: function (data, type, row, meta) {
+                                return "<span id='row" + row.id + "-column-id'>" + data + '<span>';
+                            }
+                        },
+
+                        {
+                            data: 'username',
+                            render: function (data, type, row, meta) {
+                                return "<span id='row" + row.id + "-column-id'>" + data + '<span>';
+                            }
+                        },
+                        {
+                            data: 'fullName',
+                            render: function (data, type, row, meta) {
+                                return "<span id='row" + row.id + "-column-id'>" + data + '<span>';
+                            }
+                        },
+                        // {
+                        //     data: 'email',
+                        //     render: function (data, type, row, meta) {
+                        //         return "<span id='row" + row.id + "-column-id'>" + data + '<span>';
+                        //     }
+                        // },
+                        {
+                            data: "dob",
+                            render: function (data) {
+                                var tempDate = new Date(data);
+                                var displayValue = moment(data).format("DD/MM/YYYY");
+                                return displayValue;
+                            }
+                        },
+                        {
+                            data: 'phoneNumber',
+                            render: function (data, type, row, meta) {
+                                return "<span id='row" + row.id + "-column-id'>" + data + '<span>';
+                            }
+                        },
+                        {
+                            data: 'roleName',
+                            render: function (data, type, row, meta) {
+                                return "<span id='row" + row.id + "-column-id'>" + data + '<span>';
+                            }
+                        },
+                        {
+                            data: 'departmentName',
+                            render: function (data, type, row, meta) {
+                                return "<span id='row" + row.id + "-column-id'>" + data + '<span>';
+                            }
+                        },
+                        {
+                            data: "createdTime",
+                            render: function (data) {
+                                var tempDate = new Date(data);
+                                var displayValue = moment(data).format("DD/MM/YYYY HH:mm:ss");
+                                return displayValue;
+                            }
+                        },
+                        {
+                            data: 'id',
+                            render: function (data, type, row, meta) {
+                                return "<div class='d-flex justify-content-center gap-2'>"
+                                    + "<a title='Cập nhật' onclick='editItem(" + row.id + ")' class='me-2 btn_manage'><span class='svg-icon-success svg-icon  svg-icon-1 svg_teh009'><span class='svg-icon-primary svg-icon  svg-icon-1'> <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path opacity='0.3' fill-rule='evenodd' clip-rule='evenodd' d='M2 4.63158C2 3.1782 3.1782 2 4.63158 2H13.47C14.0155 2 14.278 2.66919 13.8778 3.04006L12.4556 4.35821C11.9009 4.87228 11.1726 5.15789 10.4163 5.15789H7.1579C6.05333 5.15789 5.15789 6.05333 5.15789 7.1579V16.8421C5.15789 17.9467 6.05333 18.8421 7.1579 18.8421H16.8421C17.9467 18.8421 18.8421 17.9467 18.8421 16.8421V13.7518C18.8421 12.927 19.1817 12.1387 19.7809 11.572L20.9878 10.4308C21.3703 10.0691 22 10.3403 22 10.8668V19.3684C22 20.8218 20.8218 22 19.3684 22H4.63158C3.1782 22 2 20.8218 2 19.3684V4.63158Z' fill='currentColor'></path><path d='M10.9256 11.1882C10.5351 10.7977 10.5351 10.1645 10.9256 9.77397L18.0669 2.6327C18.8479 1.85165 20.1143 1.85165 20.8953 2.6327L21.3665 3.10391C22.1476 3.88496 22.1476 5.15129 21.3665 5.93234L14.2252 13.0736C13.8347 13.4641 13.2016 13.4641 12.811 13.0736L10.9256 11.1882Z' fill='currentColor'></path><path d='M8.82343 12.0064L8.08852 14.3348C7.8655 15.0414 8.46151 15.7366 9.19388 15.6242L11.8974 15.2092C12.4642 15.1222 12.6916 14.4278 12.2861 14.0223L9.98595 11.7221C9.61452 11.3507 8.98154 11.5055 8.82343 12.0064Z' fill='currentColor'></path></svg></span></span></a>"
+                                    + "<a title='Cập nhật' onclick='deleteItem(" + row.id + ")' class='me-2 btn_manage'><span class='svg-icon-success svg-icon  svg-icon-1 svg_teh009'><span class='svg-icon-danger svg-icon  svg-icon-1'><svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z' fill='currentColor'></path><path opacity='0.5' d='M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z' fill='currentColor'></path><path opacity='0.5' d='M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z' fill='currentColor'></path></svg></span></a>"
+                            }
+                        },
+
+                    ],
+                    columnDefs: [
+                        { targets: "no-sort", orderable: false },
+                        { targets: "no-search", searchable: false },
+                        { orderable: false, targets: [-1, 0] },
+                    ],
+                    aLengthMenu: [
+                        [10, 25, 50, 100],
+                        [10, 25, 50, 100]
+                    ],
+                    drawCallback: function () {
+                        $('#tableData tfoot').html("");
+                        $("#tableData thead:nth-child(1) tr").clone(true).appendTo("#tableData tfoot");
+                        $('#tableData tfoot tr').addClass("border-top");
+                    }
+                });
+            }
+
+            // Load roles and departments for modal dropdowns
+            function loadRolesAndDepartments() {
+                $.get(`${apiBaseUrl}role`, function (res) {
+                    if (res) {
+
+                        $('#roleId').empty();
+                        res.data.forEach(role => {
+                            $('#roleId').append(`<option value="${role.id}">${role.roleName}</option>`);
+                        });
+                    } else {
+                        console.error('No roles data received');
+                    }
+                });
+
+                $.get(`${apiBaseUrl}department`, function (res) {
+                    if (res) {
+                        $('#departmentId').empty();
+                        res.data.forEach(dept => {
+                            $('#departmentId').append(`<option value="${dept.id}">${dept.departmentName}</option>`);
+                        });
+                    } else {
+                        console.error('No departments data received');
+                    }
+                });
+            }
+
+            // Add new account
+            $('#btnAddAccount').click(function () {
+                $('#accountForm')[0].reset();
+                $('#accountModalLabel').text('Add New Account');
+                var modal = new bootstrap.Modal(document.getElementById('accountModal'));
+                modal.show();
+            });
+
+            // Save account
+            $('#btnSaveAccount').click(function () {
+                const formData = $('#accountForm').serializeArray();
+                const formObject = {};
+                formData.forEach(field => formObject[field.name] = field.value);
+                formObject.password = CryptoJS.SHA256(formObject.password || '').toString(CryptoJS.enc.Base64); // Hash password
+
+                const url = formObject.id ? `${apiBaseUrl}account/${formObject.id}` : `${apiBaseUrl}account`;
+                const method = formObject.id ? 'PUT' : 'POST';
+
+                $.ajax({
+                    url,
+                    method,
+                    contentType: 'application/json',
+                    data: JSON.stringify(formObject),
+                    success: function () {
+                        Swal.fire('Success', 'Account saved successfully', 'success');
+                        var modal = bootstrap.Modal.getInstance(document.getElementById('accountModal'));
+                        modal.hide();
+                        table.ajax.reload();
+                    },
+                    error: function () {
+                        Swal.fire('Error', 'Failed to save account', 'error');
+                    }
+                });
+            });
+
+            loadRolesAndDepartments();
+        });
+
+        // Edit account
+        function editItem(itemId) {
+            $.get(`${apiBaseUrl}account/${itemId}`, function (res) {
+                let account = res.data[0];
+                $('#accountCode').val(account.accountCode);
+                $('#username').val(account.username);
+                $('#fullName').val(account.fullName);
+                $('#email').val(account.email);
+                $('#dob').val(moment(account.dob).format('YYYY-MM-DD'));
+                $('#phoneNumber').val(account.phoneNumber);
+                $('#roleId').val(account.roleId);
+                $('#departmentId').val(account.departmentId);
+                $('#accountModalLabel').text('Edit Account');
+                var modal = new bootstrap.Modal(document.getElementById('accountModal'));
+                modal.show();
+            });
+        }
+
+        // Delete account
+        function deleteItem(itemId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You won\'t be able to revert this!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: `${apiBaseUrl}account/${itemId}`,
+                        method: 'DELETE',
+                        success: function () {
+                            Swal.fire('Deleted!', 'Account has been deleted.', 'success');
+                            table.ajax.reload();
+                        },
+                        error: function () {
+                            Swal.fire('Error', 'Failed to delete account', 'error');
+                        }
+                    });
+                }
+            });
+        }
+    </script>}

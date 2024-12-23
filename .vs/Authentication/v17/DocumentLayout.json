@@ -1,0 +1,110 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|d:\\huykhoi\\fis\\net\\authentication\\authentication\\views\\account\\adminlistserverside.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|solutionrelative:authentication\\views\\account\\adminlistserverside.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|d:\\huykhoi\\fis\\net\\authentication\\authentication\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|solutionrelative:authentication\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|d:\\huykhoi\\fis\\net\\authentication\\authentication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|solutionrelative:authentication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|d:\\huykhoi\\fis\\net\\authentication\\authentication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{986F56C6-0C3D-409D-A231-ED384B98CA94}|Authentication\\Authentication.csproj|solutionrelative:authentication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 583,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Program.cs",
+              "RelativeDocumentMoniker": "Authentication\\Program.cs",
+              "ToolTip": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Program.cs",
+              "RelativeToolTip": "Authentication\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T02:52:35.223Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminListServerSide.cshtml",
+              "DocumentMoniker": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Views\\Account\\AdminListServerSide.cshtml",
+              "RelativeDocumentMoniker": "Authentication\\Views\\Account\\AdminListServerSide.cshtml",
+              "ToolTip": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Views\\Account\\AdminListServerSide.cshtml",
+              "RelativeToolTip": "Authentication\\Views\\Account\\AdminListServerSide.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T02:44:42.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Authentication\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Authentication\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T02:28:53.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Authentication\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\HuyKhoi\\FIS\\Net\\Authentication\\Authentication\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Authentication\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T02:20:32.249Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 156,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
